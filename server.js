@@ -22,6 +22,6 @@ app.listen(PORT, () => {
 });
 
 // Test routes for role-based access control
-import testRoutes from "./src/routes/testRoutes.js";
+import testRoutes from "./source/routes/testRoutes.js";
 
 app.use("/api/test", testRoutes);
