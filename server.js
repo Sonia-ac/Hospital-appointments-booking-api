@@ -1,7 +1,7 @@
 
 import express from "express";
 import dotenv from "dotenv";
-import authRoutes from "./src/routes/authRoutes.js";
+import authRoutes from "./source/routes/authRoutes.js";
 
 dotenv.config();
 
@@ -20,3 +20,8 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
+// Test routes for role-based access control
+import testRoutes from "./src/routes/testRoutes.js";
+
+app.use("/api/test", testRoutes);
