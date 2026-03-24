@@ -1,5 +1,10 @@
-require("dotenv").config();
-const express = require("express");
+
+import express from "express";
+import dotenv from "dotenv";
+import authRoutes from "./src/routes/authRoutes.js";
+
+dotenv.config();
+
 const app = express();
 
 app.use(express.json());
@@ -7,6 +12,8 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.send("Hospital Appointment Booking API is running...");
 });
+
+app.use("/api/auth", authRoutes);
 
 const PORT = process.env.PORT || 5000;
 
